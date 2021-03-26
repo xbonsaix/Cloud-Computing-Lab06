@@ -21,11 +21,11 @@ db.init().then(() => {
     process.exit(1);
 });
 
-const gracefulShutdown = () => {
-    db.teardown()
-        .catch(() => {})
-        .then(() => process.exit());
-};
+// const gracefulShutdown = () => {
+//     db.teardown()
+//         .catch(() => {})
+//         .then(() => process.exit());
+// };
 
 process.on('SIGINT', gracefulShutdown);
 process.on('SIGTERM', gracefulShutdown);
